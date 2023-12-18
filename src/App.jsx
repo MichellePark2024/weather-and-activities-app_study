@@ -20,13 +20,17 @@ console.log("activities", activities);
   
   //Fetch API
   const [weather, setWeather] = useState(); 
-  
+  const [condition, setCondition] = useState(); 
+  const [temperature, setTemperature] = useState(); 
+
   //Filtering the List
   const filteredActivities =activities.filter(
    activity => activity.isForGoodWeather === weather
-  );
-  
-  useEffect(() => {
+   );
+   
+   useEffect(() => {
+    //Fetch on Intervall
+    const interval = setInterval(() => {
     async function fetchData() {
       const response = await fetch(
         'https://example-apis.vercel.app/api/weather/'
@@ -34,9 +38,15 @@ console.log("activities", activities);
         const data = await response.json();
         console.log("data", data);
         setWeather(data.isGoodWeather);
-    }
+        setCondition(data.condition);
+        setTemperature(data.temperature);
+      }
+      
+      fetchData();
+      
+    }, 5000);
+    return () => clearInterval(interval);
 
-    fetchData();
 }, []);
 
 
@@ -47,6 +57,10 @@ function handleDeleteActivity (clickedId) {
 
   return (
     <>
+    <div>
+      {condition}
+      {temperature}
+    </div>
     <List 
     viewList={filteredActivities} 
     isGoodWeather={weather}
