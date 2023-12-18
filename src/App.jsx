@@ -57,10 +57,10 @@ function handleDeleteActivity (clickedId) {
 
   return (
     <>
-    <div>
+      <h1>
       {condition}
       {temperature}
-    </div>
+      </h1>
     <List 
     viewList={filteredActivities} 
     isGoodWeather={weather}
