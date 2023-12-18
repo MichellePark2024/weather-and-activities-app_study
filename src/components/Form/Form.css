@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    font-size: medium;
+    max-width: 400px;
+    min-height: 24vh;
+    padding: 10px;
+    /* line-height: 50px; */
+  }
+  
+
+  .input_activity {
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+}

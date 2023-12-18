@@ -1,6 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 2;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -28,11 +28,28 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgb(93, 5, 187), rgb(213, 103, 252));
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.4em;
+  line-height: 0.2;
+  color: white;
+}
+
+h3 {
+  font-size: 1.2em;
+  /* padding-top: 20px; */
+  line-height: 0.6;
+  color: rgb(83, 12, 170);
+}
+
+header {
+  font-size: 6em;
+  line-height: 1;
+  padding-bottom: 20px;
+  color: rgb(83, 12, 170);
+  font-weight: 700;
 }
 
 button {
