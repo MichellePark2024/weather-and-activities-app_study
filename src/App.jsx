@@ -12,6 +12,8 @@ function App() {
     "activities", {defaultValue: [],}
   );
 
+  
+
   const handleAddActivity = (newActivity) => {
     const activityWithId = {...newActivity, id: uid()};
 
@@ -25,11 +27,28 @@ function App() {
   );
 
 
+  //Fetch API
+  const [weather, setWeather] = useState(true); 
+
+  useEffect(() => {
+    async function fetchData() {
+        const response = await fetch(
+            'https://example-apis.vercel.app/api/weather/'
+        );
+        const data = await response.json();
+console.log("data", data);
+        setWeather(data.isGoodWeather);
+    }
+
+    fetchData();
+}, []);
+
+
   return (
     <>
     <List 
     viewList={filteredActivities} 
-    isGoodWeather={isGoodWeather}
+    isGoodWeather={weather}
     />
     <Form onAddActivity = {handleAddActivity} />
     </>
