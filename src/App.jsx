@@ -1,10 +1,24 @@
-
+import { uid } from 'uid';
 import './App.css'
-import Form from './components/Form/Form'
+import Form from "./components/Form/Form";
+import { useState, useEffect } from 'react';
+import useLocalStorageState from "use-local-storage-state";
 
 
 function App() {
-  return (<Form></Form>)
+  // const [isGoodWeather, setIsGoodWEather] = useState('');
+  const [activities, setActivities] = useLocalStorageState(
+    "activities", {defaultValue: [],}
+  );
+
+  const handleAddActivity = (newActivity) => {
+    const activityWithId = {...newActivity, id: uid()};
+
+    setActivities((prevActivities) => [...prevActivities, activityWithId]);
+  };
+
+  return (<Form onAddActivity = {handleAddActivity} />)
 }
 
-export default App
+export default App;
+
