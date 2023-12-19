@@ -41,9 +41,7 @@ console.log("activities", activities);
         setCondition(data.condition);
         setTemperature(data.temperature);
       }
-      
       fetchData();
-      
     }, 5000);
     return () => clearInterval(interval);
 

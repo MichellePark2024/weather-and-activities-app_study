@@ -32,7 +32,7 @@ body {
 }
 
 h1 {
-  font-size: 2.4em;
+  font-size: 2.2em;
   line-height: 0.2;
   color: white;
 }
@@ -52,23 +52,22 @@ header {
   font-weight: 700;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+li {
+  /* font-size: 1.1em; */
+  /* line-height: 1; */
+  /* padding-bottom: 20px; */
+  color: rgb(83, 12, 170);
+  font-weight: 700;
+  /* list-style: none; */
+  padding-left: 0;
+text-align: left;
 }
-button:hover {
-  border-color: #646cff;
+ul {
+  width: 150px;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.activity_section {
+  display: flex;
+  justify-content: center;
 }
 
 @media (prefers-color-scheme: light) {

@@ -12,14 +12,16 @@ return (
 : "Bad weather!"}
 </h3>
  )}
+ <section className="activity_section">
     <ul>
     {viewList.map((activity) => (
         <li key={activity.id}>{activity.name}
-        <button onClick={() => onDeleteActivity(activity.id)}>X</button>
+        <button onClick={() => onDeleteActivity(activity.id)} className="deleteButton">X</button>
         </li>
     ))
     }
   </ul>
+  </section>
   </>
 );
 
