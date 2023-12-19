@@ -9,7 +9,9 @@ function handleSubmit(event){
     /*Extract the submitted data as an object with the keys name and 
     isForGoodWeather and their respective values.
     Hint: To get the boolean value of a checkbox, use .checked.*/
-
+if(event.target.elements.name.value == ""){
+    return
+}
     const newActivity = {
         name: event.target.elements.name.value,
         isForGoodWeather: event.target.elements.isForGoodWeather.checked,

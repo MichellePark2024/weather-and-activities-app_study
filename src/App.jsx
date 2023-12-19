@@ -30,7 +30,6 @@ console.log("activities", activities);
    
    useEffect(() => {
     //Fetch on Intervall
-    const interval = setInterval(() => {
     async function fetchData() {
       const response = await fetch(
         'https://example-apis.vercel.app/api/weather/'
@@ -42,6 +41,8 @@ console.log("activities", activities);
         setTemperature(data.temperature);
       }
       fetchData();
+      const interval = setInterval(() => {
+fetchData()
     }, 5000);
     return () => clearInterval(interval);
 
